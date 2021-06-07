@@ -1,5 +1,5 @@
 
-
+//-------The first forms placeholder code
 
 let dateObject = {
   month: "00",
@@ -15,7 +15,10 @@ console.log(inputFrame)
 let dateFrame = document.getElementById('dateFrame')
 dateFrame.placeholder = inputFrame
 
+//-------------------End Of Place Holder-----------------------
+
 let myBtn = document.getElementById('myBtn')
+let formRead = document.getElementById('formRead')
 
 let myFunK = () => {
   let myMonth = document.querySelector('.mizunth')
@@ -23,22 +26,44 @@ let myFunK = () => {
   myMonth.style.backgroundColor = "green"
 }
 
+
 let dateCollector = []
- let collateDate = (e) => {
-   e.preventDefault()
-   let myForm = document.getElementById("customForm")
-   let myDay = document.getElementsByName('day')
-   let myYear = document.getElementsByName('year')
-   let displayDate = `${myForm.month.value}/${myForm.day.value}/${myForm.year.value}`
-   let checkDate = document.createElement('h1')
-   checkDate.innerText = displayDate
-   myForm.append(checkDate)
-   console.log(displayDate)
+let collateDate = (e) => {
+  e.preventDefault()
+  
+  let myForm = document.getElementById("customForm")
+
+  formRead.innerText = ""
+  myForm.style.backgroundColor = "transparent"
+
+  if(myForm.month.value > 12 || myForm.month.value < 1) {
+    myForm.style.backgroundColor = "red"
+    formRead.innerText = "Month Value must be between 1 & 12 only"
+  }
+  let displayDate = `${myForm.month.value}/${myForm.day.value}/${myForm.year.value}`
+
+  let checkDate = document.getElementById('checkDate')
+  checkDate.innerText = displayDate
+  console.log(displayDate)
 
   myFunK()
 
-   dateCollector.push(myForm.month.value, myForm.day.value, myForm.year.value)
-   console.log(dateCollector)
-  
- }
+  dateCollector.push(displayDate)
+  console.log(dateCollector)
+
+}
 myBtn.addEventListener('click', collateDate)
+
+
+
+
+//Code Purgatory:
+/*
+let myDay = document.getElementsByName('day')
+let myYear = document.getElementsByName('year') 
+
+let formRead = document.createElement('h2')
+formRead.innerText = myForm.month.value
+myForm.append(formRead)
+
+*/

@@ -22,10 +22,12 @@
     <div id="date-three">
       <form id="customForm" action="">
         <label for="date">Enter Date</label>
-        <input type="number" min="0"  max="12" step="1" name="day" id="dateFrame">
-        <input class="mizunth" type="number" min="0"  max="31" step="1" name="month" id="dateFrame">
+        <input class="mizunth" type="number" min="1"  max="12" step="1" name="month" id="dateFrame">
+        <input type="number" min="1"  max="31" step="1" name="day" id="dateFrame">
         <input type="number" min="1900" max="2022" step="1" name="year" id="dateFrame">
         <button type="submit" id="myBtn">Submit Date</button>
+        <p id="formRead"></p>
+        <h1 id="checkDate"></h1>
       </form>
     </div>
   </div>
