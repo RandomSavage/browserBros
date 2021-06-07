@@ -17,6 +17,24 @@ dateFrame.placeholder = inputFrame
 
 //-------------------End Of Place Holder-----------------------
 
+
+//Going for a filter
+
+let dateFrame2 = document.getElementById('dateFrame2')
+let dateFrame2_data = document.querySelector('.dateFrame2_data')
+dateFrame2.placeholder = inputFrame
+dateFrame2.addEventListener('change', () => {
+  dateFrame2.style.backgroundColor = "cyan"
+  // dateFrame2_data.innerText = dateFrame2.value
+})
+dateFrame2.addEventListener('keydown', (e) => {
+  dateFrame2_data.textContent += ` ${e.key}`
+})
+//--------------------End Going For A Filter--------------------
+
+
+
+
 let myBtn = document.getElementById('myBtn')
 let formRead = document.getElementById('formRead')
 
@@ -47,7 +65,7 @@ let collateDate = (e) => {
   checkDate.innerText = displayDate
   console.log(displayDate)
 
-  myFunK()
+  // myFunK()
 
   dateCollector.push(displayDate)
   console.log(dateCollector)
@@ -55,7 +73,11 @@ let collateDate = (e) => {
 }
 myBtn.addEventListener('click', collateDate)
 
-
+let myDay = document.getElementById('dizzay')
+console.log(`Test1: ${myDay}`)
+myDay.addEventListener('change', () => {
+  myDay.style.backgroundColor = "cyan"
+})
 
 
 //Code Purgatory:
@@ -68,3 +90,16 @@ formRead.innerText = myForm.month.value
 myForm.append(formRead)
 
 */
+
+
+// https://gist.github.com/chrisjpatty/b0760e1973ca765e7a31d6be7d0ca861
+/* const maskDate = value => {
+  let v = value.replace(/\D/g,'').slice(0, 10);
+  if (v.length >= 5) {
+    return `${v.slice(0,2)}/${v.slice(2,4)}/${v.slice(4)}`;
+  }
+  else if (v.length >= 3) {
+    return `${v.slice(0,2)}/${v.slice(2)}`;
+  }
+  return v
+} */

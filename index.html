@@ -13,17 +13,24 @@
       <label for="date">Enter Date</label>
       <input type="date" name="date" id="date">
     </form>
-    <div id="date-two">
+    <div id="date-one">
       <form action="">
         <label for="date">Enter Date</label>
         <input type="text" name="date" id="dateFrame">
+      </form>
+    </div>
+    <div id="date-two">
+      <form action="">
+        <label for="date">Enter Date</label>
+        <input type="text" name="date" id="dateFrame2">
+        <p class="dateFrame2_data"></p>
       </form>
     </div>
     <div id="date-three">
       <form id="customForm" action="">
         <label for="date">Enter Date</label>
         <input class="mizunth" type="number" min="1"  max="12" step="1" name="month" id="dateFrame">
-        <input type="number" min="1"  max="31" step="1" name="day" id="dateFrame">
+        <input id="dizzay" type="number" min="1"  max="31" step="1" name="day" id="dateFrame">
         <input type="number" min="1900" max="2022" step="1" name="year" id="dateFrame">
         <button type="submit" id="myBtn">Submit Date</button>
         <p id="formRead"></p>

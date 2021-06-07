@@ -1,13 +1,17 @@
 
 #container{
-  height: 400px;
+  height: 600px;
   width: 800px;
-  margin: 0 auto;
+  margin: 100px auto;
   background: royalblue;
   /* background: url(''); */
   background-size: cover;
   background-position: center;
 } 
+
+#date-one{
+  margin-top: 40px;
+}
 
 #date-two{
   margin-top: 40px;
