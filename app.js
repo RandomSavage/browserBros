@@ -23,21 +23,22 @@ let formRead = document.getElementById('formRead')
 let myFunK = () => {
   let myMonth = document.querySelector('.mizunth')
 
-  myMonth.style.backgroundColor = "green"
+  myMonth.style.backgroundColor = "red"
 }
 
 
 let dateCollector = []
 let collateDate = (e) => {
   e.preventDefault()
-  
+
   let myForm = document.getElementById("customForm")
 
   formRead.innerText = ""
+  formRead.style.color = "#fff"
   myForm.style.backgroundColor = "transparent"
 
   if(myForm.month.value > 12 || myForm.month.value < 1) {
-    myForm.style.backgroundColor = "red"
+    myFunK()
     formRead.innerText = "Month Value must be between 1 & 12 only"
   }
   let displayDate = `${myForm.month.value}/${myForm.day.value}/${myForm.year.value}`
