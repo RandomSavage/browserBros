@@ -2,9 +2,9 @@
 //-------The first forms placeholder code
 
 let dateObject = {
-  month: "00",
-  day: "00",
-  year: "0000",
+  month: "mm",
+  day: "dd",
+  year: "yyyy",
   seperator: "/"
 }
 
@@ -22,14 +22,28 @@ dateFrame.placeholder = inputFrame
 
 let dateFrame2 = document.getElementById('dateFrame2')
 let dateFrame2_data = document.querySelector('.dateFrame2_data')
-dateFrame2.placeholder = inputFrame
+dateFrame2.placeholder = "mm/dd/yyyy"
+// let dateInput = dateFrame2_data.innerText
+
 dateFrame2.addEventListener('change', () => {
   dateFrame2.style.backgroundColor = "cyan"
   // dateFrame2_data.innerText = dateFrame2.value
 })
+
 dateFrame2.addEventListener('keydown', (e) => {
-  dateFrame2_data.textContent += ` ${e.key}`
-})
+  if(dateFrame2_data.innerText.length <= 9) {
+    dateFrame2_data.innerText += `${e.key}`
+    if(dateFrame2_data.innerText.match(/^\d{2}$/) !== null) {
+      dateFrame2_data.innerText += `/`
+    } else if(dateFrame2_data.innerText.match(/^\d{2}\/\d{2}$/) !== null) {
+        dateFrame2_data.innerText += `/`
+    } else if(e.key === "Backspace") {
+      console.log(e.key)
+    }
+   }
+  })
+
+
 //--------------------End Going For A Filter--------------------
 
 
