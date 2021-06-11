@@ -147,7 +147,7 @@ let myImg = document.querySelector('.top-header__user-img')
 let spotHeight = 1
 let spotWidth = 1
 
-// set event looking for wheel up or down and allows to scale up by .5 at a time until 3 times original dimension it allows to scale down until it reaches the original scale and prevents further scale down then allows window scroll again
+// set event looking for wheel up or down and allows to scale up by .5 at a time until 5 times or (whatever) original dimension it allows to scale down until it reaches the original scale and prevents further scale down (spotHeight === 1) then allows window scroll again
 myImg.addEventListener('wheel', (e) => {
   disableScroll()
   for(let i = 0; i < 2; i += 1) {
