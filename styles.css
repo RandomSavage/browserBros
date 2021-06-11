@@ -1,13 +1,54 @@
 
 #container{
-  height: 600px;
+  height: 900px;
   width: 800px;
   margin: 100px auto;
   background: royalblue;
   /* background: url(''); */
   background-size: cover;
   background-position: center;
+  /* overscroll-behavior: contain; */
+
 } 
+
+#logo{
+  height: 400px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+#logo img{
+  height: 100%;
+  width: 100%;
+  transform: scale(.5, .5);
+  /* overscroll-behavior: contain; */
+}
+
+/* .scaleOn{
+  /*General*/
+  transform: scale(2, 5);
+  /*Firefox*/
+  -moz-transform: scale(2, 5);
+  /*Microsoft Internet Explorer*/
+  -ms-transform: scale(2, 5);
+  /*Chrome, Safari*/
+  -webkit-transform: scale(2, 5);
+  /*Opera*/
+  -o-transform: scale(2, 5);
+}
+
+.scaleDown{
+  /*General*/
+  transform: scale(1, 2);
+  /*Firefox*/
+  -moz-transform: scale(1, 2);
+  /*Microsoft Internet Explorer*/
+  -ms-transform: scale(1, 2);
+  /*Chrome, Safari*/
+  -webkit-transform: scale(1, 2);
+  /*Opera*/
+  -o-transform: scale(1, 2);
+} */
 
 #date-one{
   margin-top: 40px;

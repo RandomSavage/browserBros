@@ -118,61 +118,96 @@ myForm.append(formRead)
   return v
 } */
 
-
-
-
-//-----------------This section is for the image zoom------------------
-
-
-// This part keeps the window from scrolling when you are targeting the image for zooming
-
-function disableScroll() {
-  // Get the current page scroll position
-  scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-
-      // if any scroll is attempted, set this to the previous value
-      window.onscroll = function() {
-          window.scrollTo(scrollLeft, scrollTop);
-      };
-}
-// This renables or resets the ability to scroll (stops resetting the window offset)
-function enableScroll() {
-  window.onscroll = function() {};
-}
-
-
-//Targets the image section and sets a starting scale(height , width)
 let myImg = document.querySelector('.top-header__user-img')
 let spotHeight = 1
 let spotWidth = 1
+/* myImg.addEventListener('wheel', (e) => {
+  for(let i = 0; i < 10; i += 1) {
+    spotWidth += .1
+    spotHeight += .1
+    myImg.style.transform = `scale(${spotWidth}, ${spotHeight})`
 
-// set event looking for wheel up or down and allows to scale up by .5 at a time until 3 times original dimension it allows to scale down until it reaches the original scale and prevents further scale down then allows window scroll again
+  }
+}) */
+
+/* function detectMouseWheelDirection( e )
+{
+    var delta = null,
+        direction = false
+    ;
+    if ( !e ) { // if the event is not provided, we get it from the window object
+        e = window.event;
+    }
+    if ( e.wheelDelta ) { // will work in most cases
+        delta = e.wheelDelta / 60;
+    } else if ( e.detail ) { // fallback for Firefox
+        delta = -e.detail / 2;
+    }
+    if ( delta !== null ) {
+        direction = delta > 0 ? 'up' : 'down';
+    }
+
+    return direction;
+}
+function handleMouseWheelDirection( direction )
+{
+    console.log( direction ); // see the direction in the console
+    if ( direction == 'down' ) {
+        // do something, like show the next page
+    } else if ( direction == 'up' ) {
+        // do something, like show the previous page
+    } else {
+        // this means the direction of the mouse wheel could not be determined
+    }
+}
+document.onmousewheel = function( e ) {
+    handleMouseWheelDirection( detectMouseWheelDirection( e ) );
+};
+if ( window.addEventListener ) {
+    document.addEventListener( 'DOMMouseScroll', function( e ) {
+        handleMouseWheelDirection( detectMouseWheelDirection( e ) );
+    });
+} */
+
+
+
 myImg.addEventListener('wheel', (e) => {
+  for(let i = 0; i < 10; i += 1) {
+    if(e.deltaY > 0) {
+      spotHeight += 1
+      spotWidth += 1
+      myImg.style.transform = `scale(${spotWidth}, ${spotHeight})`
+    } else if(e.deltaY < 0) {
+      spotHeight -= 1
+      spotWidth -= 1
+      myImg.style.transform = `scale(${spotWidth}, ${spotHeight})`
+    }
+
+  }
+  // myImg.classList.add('scaleDown')
+}, {passive: true})
+
+
+/* myImg.addEventListener('wheel', (e) => {
   disableScroll()
-  for(let i = 0; i < 2; i += 1) {
-    if(e.deltaY < 0 && spotHeight <= 5) {
-      spotHeight += .5
-      spotWidth += .5 
+  for(let i = 0; i < 3; i += 1) {
+    if(e.deltaY < 0) {
+      spotHeight += 1
+      spotWidth += 1
       myImg.style.transform = `scale(${spotWidth}, ${spotHeight})`
       scrollTop = 0
-      console.log(myImg.style.height)
-    } else if(e.deltaY > 0 && spotHeight >= 1){
-        spotHeight -= .5
-        spotWidth -= .5
-        myImg.style.transform = `scale(${spotWidth}, ${spotHeight})`
-        scrollTop = 0
-    }else {
-      e.deltaY === e.deltaY
+    } else if(e.deltaY > 0) {
+      spotHeight -= 1
+      spotWidth -= 1
+      myImg.style.transform = `scale(${spotWidth}, ${spotHeight})`
       scrollTop = 0
-      enableScroll()
+    } else if(e.deltaY === 0) {
+      spotWidth = 0
+      spotHeight = 0
+      myImg.style.height = "400px"
+      myImg.style.width = "600px"
     }
   }
-})
+}) */
 
-//-----------------This [Ends] the section for the image zoom------------------
-
-
-
-
-
+// myImg.addEventListener('mouseleave', enableScroll())
