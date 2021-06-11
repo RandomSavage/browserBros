@@ -6,40 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BrowserBros</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="container">
-  <div id="logo">
-    <img src="https://paulryan.com.au/wp-content/uploads/2015/01/high-resolution-wallpapers-25.jpg" class="top-header__user-img" onmouseover="this.className='top-header__user-img scaleOn'" onmouseout="this.className='top-header__user-img'"/>
-  </div>
-    <form action="">
-      <label for="date">Enter Date</label>
-      <input type="date" name="date" id="date">
-    </form>
-    <div id="date-one">
+    <div id="top-section">
+      <div id="logo">
+        <img src="https://paulryan.com.au/wp-content/uploads/2015/01/high-resolution-wallpapers-25.jpg" class="top-header__user-img" alt="tropical-paradise"/>
+      </div>
+      <h2>Scroll Me with your Mouse Wheel</h2>
+    </div>
+    <section id="form_section">
       <form action="">
-        <label for="date">Enter Date</label>
-        <input type="text" name="date" id="dateFrame">
+        <label for="date" style="color: #fff;">Enter Date</label>
+        <input type="date" name="date" id="date">
       </form>
-    </div>
-    <div id="date-two">
-      <form action="">
-        <label for="date">Enter Date</label>
-        <input type="text" name="date" id="dateFrame2" maxlength="8">
-        <p class="dateFrame2_data"></p>
-      </form>
-    </div>
-    <div id="date-three">
-      <form id="customForm" action="">
-        <label for="date">Enter Date</label>
-        <input class="mizunth" type="number" min="1"  max="12" step="1" name="month" id="dateFrame">
-        <input id="dizzay" type="number" min="1"  max="31" step="1" name="day" id="dateFrame">
-        <input type="number" min="1900" max="2022" step="1" name="year" id="dateFrame">
-        <button type="submit" id="myBtn">Submit Date</button>
-        <p id="formRead"></p>
-        <h1 id="checkDate"></h1>
-      </form>
-    </div>
+      <div id="date-one">
+        <form action="">
+          <label for="date">Enter Date</label>
+          <input type="text" name="date" id="dateFrame">
+        </form>
+      </div>
+      <div id="date-two">
+        <form action="">
+          <label for="date">Enter Date</label>
+          <input type="text" name="date" id="dateFrame2" maxlength="8">
+          <p class="dateFrame2_data"></p>
+        </form>
+      </div>
+      <div id="date-three">
+        <form id="customForm" action="">
+          <label for="date">Enter Date</label>
+          <input class="mizunth" type="number" min="1"  max="12" step="1" name="month" id="dateFrame">
+          <input id="dizzay" type="number" min="1"  max="31" step="1" name="day" id="dateFrame">
+          <input type="number" min="1900" max="2022" step="1" name="year" id="dateFrame">
+          <button type="submit" id="myBtn">Submit Date</button>
+          <p id="formRead"></p>
+          <h1 id="checkDate"></h1>
+        </form>
+      </div>
+    </section>
   </div>
   <script src="./app.js"></script>
 </body>

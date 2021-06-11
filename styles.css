@@ -1,16 +1,32 @@
+body{
+	font-family: 'Noto Sans', sans-serif;
+  padding: 10px;
+}
 
 #container{
   height: 900px;
   width: 800px;
   margin: 100px auto;
-  background: royalblue;
+  background: rgba(2,27,64,1);
+  background: linear-gradient(133deg, rgba(2,27,64,1) 11%, rgba(9,71,121,1) 100%);
   /* background: url(''); */
   background-size: cover;
   background-position: center;
   /* overscroll-behavior: contain; */
-
 } 
 
+#top-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+#top-section h2{
+  color: #fff;
+  margin-top: -70px;
+}
 #logo{
   height: 400px;
   width: 600px;
@@ -24,38 +40,27 @@
   /* overscroll-behavior: contain; */
 }
 
-/* .scaleOn{
-  /*General*/
-  transform: scale(2, 5);
-  /*Firefox*/
-  -moz-transform: scale(2, 5);
-  /*Microsoft Internet Explorer*/
-  -ms-transform: scale(2, 5);
-  /*Chrome, Safari*/
-  -webkit-transform: scale(2, 5);
-  /*Opera*/
-  -o-transform: scale(2, 5);
+
+
+#form_section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
-.scaleDown{
-  /*General*/
-  transform: scale(1, 2);
-  /*Firefox*/
-  -moz-transform: scale(1, 2);
-  /*Microsoft Internet Explorer*/
-  -ms-transform: scale(1, 2);
-  /*Chrome, Safari*/
-  -webkit-transform: scale(1, 2);
-  /*Opera*/
-  -o-transform: scale(1, 2);
-} */
-
+form{
+  color: #fff;
+}
 #date-one{
   margin-top: 40px;
+  color: #fff;
 }
 
 #date-two{
   margin-top: 40px;
+  color: #fff;
 }
 
 .dateFrame2_data{
@@ -64,5 +69,6 @@
 }
 
 #date-three{
-  margin-top: 40px;  
+  margin-top: 40px;
+  color: #fff;
 }
